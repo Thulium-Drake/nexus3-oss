@@ -740,6 +740,15 @@ nexus_repos_docker_hosted:
     allow_redeploy_latest: true
 ```
 
+```yaml
+nexus_repos_docker_proxy:
+  - name: some-upstream-docker-repo
+    blob_store: docker-blob
+    remote_url: https://some-private-registry.dev/
+    remote_username: 'remote-user'     # Optional, note that Windows NTLM is _not_ supported!
+    remote_password: 'SSH-itsSecret!'  # Optional
+```
+
 Maven, Pypi, Docker, Raw, Rubygems, Bower, NPM, Git-LFS, yum, apt, helm, r, p2, conda and go repository types:
 see `defaults/main.yml` for these options. For historical reasons and to keep backward compatibility,
 maven is configured by default
